@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import userRoutes from "./routes/userRoute.js";
 import authRoutes from "./routes/authRoute.js";
-import { stat } from "fs";
 
 dotenv.config();
 mongoose
