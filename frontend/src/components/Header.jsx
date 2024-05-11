@@ -2,15 +2,17 @@
 
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import logo from "../assets/logo.png";
 const Header = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <div className="bg-slate-200">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link to="/">
+        <Link to="/" className="flex items-center">
+          {/* <img src={logo} alt="Logo" className="h-11 w-15" /> */}
           <h1 className="font-bold">Auth-App</h1>
         </Link>
+        <Link to="/"></Link>
         <ul className="flex gap-4">
           <Link to="/">
             <li>Home</li>
