@@ -27,7 +27,7 @@ const Profile = () => {
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
-
+  // console.log(formData);
   const { currentUser, loading, error } = useSelector((state) => state.user);
   useEffect(() => {
     if (image) {
@@ -46,7 +46,7 @@ const Profile = () => {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setImagePercent(Math.round(progress));
       },
-      (error) => {
+      () => {
         setImageError(true);
       },
       () => {
