@@ -46,7 +46,7 @@ const Profile = () => {
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setImagePercent(Math.round(progress));
       },
-      () => {
+      (error) => {
         setImageError(true);
       },
       () => {
@@ -71,6 +71,7 @@ const Profile = () => {
         },
         body: JSON.stringify(formData),
       });
+
       const data = await res.json();
       if (data.success === false) {
         dispatch(updateUserFailure(data));
